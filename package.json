@@ -1,0 +1,15 @@
+{
+  "name": "webpack-ie8",
+  "version": "0.1.0",
+  "description": "webpack ie8 脚手架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "ie8"
+  ],
+  "author": "jimzhuang",
+  "license": "ISC"
+}
