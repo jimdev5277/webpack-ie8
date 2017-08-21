@@ -1,4 +1,5 @@
 import './css/main.scss';
+import 'babel-polyfill';
 
 $(function () {
     let temp = $('#js-logisticsArr').val();
