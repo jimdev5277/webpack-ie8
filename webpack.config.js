@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const es3ifyPlugin = require('es3ify-webpack-plugin');
 
 module.exports = {
     devtool: 'inline-source-map',
@@ -17,6 +18,9 @@ module.exports = {
         path: path.join(__dirname, 'dist/js'),
         filename: '[name].min.js'
     },
+    plugins: [
+        new es3ifyPlugin()
+    ],
     resolve: {
         extensions: [
             ".js"

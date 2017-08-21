@@ -1,5 +1,8 @@
-import './css/main.scss';
+require('es5-shim');
+require('es5-shim/es5-sham');
 import 'babel-polyfill';
+
+import './css/main.scss';
 
 $(function () {
     let temp = $('#js-logisticsArr').val();
