@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const es3ifyPlugin = require('es3ify-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+
 module.exports = {
     devtool: 'inline-source-map',
     entry: {
@@ -11,30 +10,13 @@ module.exports = {
         //     'babel-polyfill'
         // ],
         wl: [
-            './src/scripts/main.js'
+            './src/index.js'
         ]
     },
     output: {
-        path: path.join(__dirname, 'build/js'),
+        path: path.join(__dirname, 'dist/js'),
         filename: '[name].min.js'
     },
-    plugins: [
-        new es3ifyPlugin(),
-        new UglifyJSPlugin({
-            compress: {
-                properties: false,
-                warnings: false
-            },
-            output: {
-                beautify: true,
-                quote_keys: true
-            },
-            mangle: {
-                screw_ie8: false
-            },
-            sourceMap: false
-        })
-    ],
     resolve: {
         extensions: [
             ".js"
@@ -69,10 +51,6 @@ module.exports = {
                 // use: ['export-from-ie8/loader', 'babel-loader?cacheDirectory'],
                 use: ['babel-loader?cacheDirectory'],
                 include: path.join(__dirname, 'src')
-            },
-            {
-                test: /\.(png|jpg|gif|svg)$/,
-                loader: 'url-loader?limit=1'
             }]
     }
 };
