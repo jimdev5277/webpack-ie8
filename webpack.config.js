@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const es3ifyPlugin = require('es3ify-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     devtool: 'inline-source-map',
@@ -19,7 +20,21 @@ module.exports = {
         filename: '[name].min.js'
     },
     plugins: [
-        new es3ifyPlugin()
+        new es3ifyPlugin(),
+        new UglifyJSPlugin({
+            compress: {
+                properties: false,
+                warnings: false
+            },
+            output: {
+                beautify: true,
+                quote_keys: true
+            },
+            mangle: {
+                screw_ie8: false
+            },
+            sourceMap: false
+        })
     ],
     resolve: {
         extensions: [
