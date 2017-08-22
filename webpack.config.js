@@ -6,11 +6,11 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
     devtool: 'inline-source-map',
     entry: {
-        // polyfill: [
-        //     'es5-shim',
-        //     'es5-shim/es5-sham',
-        //     'babel-polyfill'
-        // ],
+        polyfill: [
+            'es5-shim',
+            'es5-shim/es5-sham',
+            'babel-polyfill'
+        ],
         wl: [
             './src/index.js'
         ]

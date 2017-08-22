@@ -1,6 +1,6 @@
-require('es5-shim');
-require('es5-shim/es5-sham');
-import 'babel-polyfill';
+// require('es5-shim');
+// require('es5-shim/es5-sham');
+// import 'babel-polyfill';
 
 import './css/main.scss';
 
